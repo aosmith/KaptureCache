@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA02628314FC2A1D00A65AFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA02628214FC2A1D00A65AFB /* UIKit.framework */; };
+		FA02628514FC2A1D00A65AFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA02628414FC2A1D00A65AFB /* Foundation.framework */; };
+		FA02628714FC2A1D00A65AFB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA02628614FC2A1D00A65AFB /* CoreGraphics.framework */; };
+		FA02628D14FC2A1D00A65AFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA02628B14FC2A1D00A65AFB /* InfoPlist.strings */; };
+		FA02628F14FC2A1D00A65AFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02628E14FC2A1D00A65AFB /* main.m */; };
+		FA02629314FC2A1D00A65AFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02629214FC2A1D00A65AFB /* AppDelegate.m */; };
+		FA02629B14FC2A1D00A65AFB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA02629A14FC2A1D00A65AFB /* SenTestingKit.framework */; };
+		FA02629C14FC2A1D00A65AFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA02628214FC2A1D00A65AFB /* UIKit.framework */; };
+		FA02629D14FC2A1D00A65AFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA02628414FC2A1D00A65AFB /* Foundation.framework */; };
+		FA0262A514FC2A1D00A65AFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA0262A314FC2A1D00A65AFB /* InfoPlist.strings */; };
+		FA0262A814FC2A1D00A65AFB /* KaptureCacheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0262A714FC2A1D00A65AFB /* KaptureCacheTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA02629E14FC2A1D00A65AFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA02627514FC2A1D00A65AFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA02627D14FC2A1D00A65AFB;
+			remoteInfo = KaptureCache;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA02627E14FC2A1D00A65AFB /* KaptureCache.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaptureCache.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA02628214FC2A1D00A65AFB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FA02628414FC2A1D00A65AFB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FA02628614FC2A1D00A65AFB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FA02628A14FC2A1D00A65AFB /* KaptureCache-Info.plist */ = {isa = PBXFileReference; path = "KaptureCache-Info.plist"; sourceTree = "<group>"; };
+		FA02628C14FC2A1D00A65AFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA02628E14FC2A1D00A65AFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA02629014FC2A1D00A65AFB /* KaptureCache-Prefix.pch */ = {isa = PBXFileReference; path = "KaptureCache-Prefix.pch"; sourceTree = "<group>"; };
+		FA02629114FC2A1D00A65AFB /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		FA02629214FC2A1D00A65AFB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FA02629914FC2A1D00A65AFB /* KaptureCacheTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaptureCacheTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA02629A14FC2A1D00A65AFB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		FA0262A214FC2A1D00A65AFB /* KaptureCacheTests-Info.plist */ = {isa = PBXFileReference; path = "KaptureCacheTests-Info.plist"; sourceTree = "<group>"; };
+		FA0262A414FC2A1D00A65AFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA0262A614FC2A1D00A65AFB /* KaptureCacheTests.h */ = {isa = PBXFileReference; path = KaptureCacheTests.h; sourceTree = "<group>"; };
+		FA0262A714FC2A1D00A65AFB /* KaptureCacheTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KaptureCacheTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA02627B14FC2A1D00A65AFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA02628314FC2A1D00A65AFB /* UIKit.framework in Frameworks */,
+				FA02628514FC2A1D00A65AFB /* Foundation.framework in Frameworks */,
+				FA02628714FC2A1D00A65AFB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA02629514FC2A1D00A65AFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA02629B14FC2A1D00A65AFB /* SenTestingKit.framework in Frameworks */,
+				FA02629C14FC2A1D00A65AFB /* UIKit.framework in Frameworks */,
+				FA02629D14FC2A1D00A65AFB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA02627314FC2A1D00A65AFB = {
+			isa = PBXGroup;
+			children = (
+				FA02628814FC2A1D00A65AFB /* KaptureCache */,
+				FA0262A014FC2A1D00A65AFB /* KaptureCacheTests */,
+				FA02628114FC2A1D00A65AFB /* Frameworks */,
+				FA02627F14FC2A1D00A65AFB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA02627F14FC2A1D00A65AFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA02627E14FC2A1D00A65AFB /* KaptureCache.app */,
+				FA02629914FC2A1D00A65AFB /* KaptureCacheTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA02628114FC2A1D00A65AFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA02628214FC2A1D00A65AFB /* UIKit.framework */,
+				FA02628414FC2A1D00A65AFB /* Foundation.framework */,
+				FA02628614FC2A1D00A65AFB /* CoreGraphics.framework */,
+				FA02629A14FC2A1D00A65AFB /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA02628814FC2A1D00A65AFB /* KaptureCache */ = {
+			isa = PBXGroup;
+			children = (
+				FA02629114FC2A1D00A65AFB /* AppDelegate.h */,
+				FA02629214FC2A1D00A65AFB /* AppDelegate.m */,
+				FA02628914FC2A1D00A65AFB /* Supporting Files */,
+			);
+			path = KaptureCache;
+			sourceTree = "<group>";
+		};
+		FA02628914FC2A1D00A65AFB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA02628A14FC2A1D00A65AFB /* KaptureCache-Info.plist */,
+				FA02628B14FC2A1D00A65AFB /* InfoPlist.strings */,
+				FA02628E14FC2A1D00A65AFB /* main.m */,
+				FA02629014FC2A1D00A65AFB /* KaptureCache-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA0262A014FC2A1D00A65AFB /* KaptureCacheTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA0262A614FC2A1D00A65AFB /* KaptureCacheTests.h */,
+				FA0262A714FC2A1D00A65AFB /* KaptureCacheTests.m */,
+				FA0262A114FC2A1D00A65AFB /* Supporting Files */,
+			);
+			path = KaptureCacheTests;
+			sourceTree = "<group>";
+		};
+		FA0262A114FC2A1D00A65AFB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA0262A214FC2A1D00A65AFB /* KaptureCacheTests-Info.plist */,
+				FA0262A314FC2A1D00A65AFB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA02627D14FC2A1D00A65AFB /* KaptureCache */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA0262AB14FC2A1D00A65AFB /* Build configuration list for PBXNativeTarget "KaptureCache" */;
+			buildPhases = (
+				FA02627A14FC2A1D00A65AFB /* Sources */,
+				FA02627B14FC2A1D00A65AFB /* Frameworks */,
+				FA02627C14FC2A1D00A65AFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KaptureCache;
+			productName = KaptureCache;
+			productReference = FA02627E14FC2A1D00A65AFB /* KaptureCache.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA02629814FC2A1D00A65AFB /* KaptureCacheTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA0262AE14FC2A1D00A65AFB /* Build configuration list for PBXNativeTarget "KaptureCacheTests" */;
+			buildPhases = (
+				FA02629414FC2A1D00A65AFB /* Sources */,
+				FA02629514FC2A1D00A65AFB /* Frameworks */,
+				FA02629614FC2A1D00A65AFB /* Resources */,
+				FA02629714FC2A1D00A65AFB /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA02629F14FC2A1D00A65AFB /* PBXTargetDependency */,
+			);
+			name = KaptureCacheTests;
+			productName = KaptureCacheTests;
+			productReference = FA02629914FC2A1D00A65AFB /* KaptureCacheTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA02627514FC2A1D00A65AFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = FA02627814FC2A1D00A65AFB /* Build configuration list for PBXProject "KaptureCache" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FA02627314FC2A1D00A65AFB;
+			productRefGroup = FA02627F14FC2A1D00A65AFB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA02627D14FC2A1D00A65AFB /* KaptureCache */,
+				FA02629814FC2A1D00A65AFB /* KaptureCacheTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA02627C14FC2A1D00A65AFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA02628D14FC2A1D00A65AFB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA02629614FC2A1D00A65AFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA0262A514FC2A1D00A65AFB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FA02629714FC2A1D00A65AFB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA02627A14FC2A1D00A65AFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA02628F14FC2A1D00A65AFB /* main.m in Sources */,
+				FA02629314FC2A1D00A65AFB /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA02629414FC2A1D00A65AFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA0262A814FC2A1D00A65AFB /* KaptureCacheTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA02629F14FC2A1D00A65AFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA02627D14FC2A1D00A65AFB /* KaptureCache */;
+			targetProxy = FA02629E14FC2A1D00A65AFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA02628B14FC2A1D00A65AFB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA02628C14FC2A1D00A65AFB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FA0262A314FC2A1D00A65AFB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA0262A414FC2A1D00A65AFB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA0262A914FC2A1D00A65AFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA0262AA14FC2A1D00A65AFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA0262AC14FC2A1D00A65AFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KaptureCache/KaptureCache-Prefix.pch";
+				INFOPLIST_FILE = "KaptureCache/KaptureCache-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FA0262AD14FC2A1D00A65AFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KaptureCache/KaptureCache-Prefix.pch";
+				INFOPLIST_FILE = "KaptureCache/KaptureCache-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FA0262AF14FC2A1D00A65AFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KaptureCache.app/KaptureCache";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KaptureCache/KaptureCache-Prefix.pch";
+				INFOPLIST_FILE = "KaptureCacheTests/KaptureCacheTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FA0262B014FC2A1D00A65AFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KaptureCache.app/KaptureCache";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KaptureCache/KaptureCache-Prefix.pch";
+				INFOPLIST_FILE = "KaptureCacheTests/KaptureCacheTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA02627814FC2A1D00A65AFB /* Build configuration list for PBXProject "KaptureCache" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA0262A914FC2A1D00A65AFB /* Debug */,
+				FA0262AA14FC2A1D00A65AFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA0262AB14FC2A1D00A65AFB /* Build configuration list for PBXNativeTarget "KaptureCache" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA0262AC14FC2A1D00A65AFB /* Debug */,
+				FA0262AD14FC2A1D00A65AFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FA0262AE14FC2A1D00A65AFB /* Build configuration list for PBXNativeTarget "KaptureCacheTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA0262AF14FC2A1D00A65AFB /* Debug */,
+				FA0262B014FC2A1D00A65AFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA02627514FC2A1D00A65AFB /* Project object */;
+}
