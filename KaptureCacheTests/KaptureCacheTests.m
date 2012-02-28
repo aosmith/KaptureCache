@@ -26,7 +26,10 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in KaptureCacheTests");
+    //STFail(@"Unit tests are not implemented yet in KaptureCacheTests");
 }
 
+- (void)generalCacheTest
+{
+}
 @end

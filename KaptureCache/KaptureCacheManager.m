@@ -35,81 +35,67 @@
         //wait cycle for pending operations
         int waitCycleCounter = 0;
         while ([pendingURLS containsObject:mainURL]) {
-            if (waitCycleCounter == 60) {
-                return;
+            if (waitCycleCounter == 30) {
+                break;
             } else {
                 NSLog(@"wait block");
-                [NSThread sleepForTimeInterval:0.5];
+                sleep(1);
             }
             waitCycleCounter++;
         }
         [pendingURLS addObject:mainURL];
 
         //Force reload
-        if (forceReload == YES || forceReload == true) {
-            NSLog(@"force reloading: %@", mainURL);
-            [NSURLConnection asyncRequest:request success:^(NSData *data, NSURLResponse *response) {
-                successBlock_(data, response);
-                KaptureCacheRequest *cacheRecord = [[KaptureCacheRequest alloc] init];
-                cacheRecord.url = mainURL;
-                cacheRecord.data = data;
-                cacheRecord.updatedAt = [NSDate date];
-                [pendingURLS removeObject:mainURL];
-            } failure:^(NSData *data, NSError *error) {
-                failureBlock_(data, error);
-            }];
-        //Regular cache
-        } else {
-            if ([instanceData objectForKey:mainURL] == nil) {
-                //try to fetch from core data
-                NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-                [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"url == %@", mainURL]];
-                [fetchRequest setFetchLimit:1];
-                [fetchRequest setEntity:[NSEntityDescription entityForName:@"KaptureCacheRequest" inManagedObjectContext:context]];
-                NSError *error = [[NSError alloc] init];
-                NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-                if ([fetchedObjects count] > 0) {
-                    KaptureCacheRequest *cacheHit = [fetchedObjects objectAtIndex:0];
-                    [instanceData setValue:cacheHit forKey:mainURL];
-                    CFAbsoluteTime endTime = CFAbsoluteTimeGetCurrent();
-                    NSLog(@"Secondary cache hit (%f):%@",(endTime - startTime),mainURL);
-                    successBlock_([cacheHit data], nil);
-                    [pendingURLS removeObject:mainURL];
-                } else {
-                    //fetch via http
-                    [NSURLConnection asyncRequest:request success:^(NSData *data, NSURLResponse *response) {
-                        [instanceData setValue:data forKey:mainURL];
-                        CFAbsoluteTime endTime = CFAbsoluteTimeGetCurrent();
-                        NSLog(@"Secondary cache hit (%f):%@",(endTime - startTime),mainURL);
-                        successBlock_(data, response);
-                        
-                        KaptureCacheRequest *cacheEntity = [NSEntityDescription insertNewObjectForEntityForName:@"KaptureCacheRequest" inManagedObjectContext:context];
-                        [cacheEntity setValue:mainURL forKey:@"url"];
-                        [cacheEntity setValue:data forKey:@"data"];
-                        [cacheEntity setValue:[NSDate date] forKey:@"updatedAt"];
-                        
-                        NSError *error = nil;
-                        [context save:&error];
-                        if (error) {
-                            NSLog(@"%@", error);
-                        }
-                        
-                        [pendingURLS removeObject:mainURL];
-                        
-                        
-                    } failure:^(NSData *data, NSError *error) {
-                    }];
-                }
-            } else {
-                //cache hit
+        if ([instanceData objectForKey:mainURL] == nil || forceReload == YES || forceReload == TRUE) {
+            //try to fetch from core data
+            NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+            [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"url == %@", mainURL]];
+            [fetchRequest setFetchLimit:1];
+            [fetchRequest setEntity:[NSEntityDescription entityForName:@"KaptureCacheRequest" inManagedObjectContext:context]];
+            NSError *error = [[NSError alloc] init];
+            NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+            if ([fetchedObjects count] > 0 && forceReload != YES && forceReload != TRUE) {
+                KaptureCacheRequest *cacheHit = [fetchedObjects objectAtIndex:0];
+                [instanceData setValue:cacheHit forKey:mainURL];
                 CFAbsoluteTime endTime = CFAbsoluteTimeGetCurrent();
-                NSLog(@"Primary cache hit (%f):%@",(endTime - startTime),mainURL);
+                NSLog(@"Secondary cache hit (%f):%@",(endTime - startTime),mainURL);
+                successBlock_([cacheHit data], nil);
                 [pendingURLS removeObject:mainURL];
-                KaptureCacheRequest *cacheRecord = [instanceData objectForKey:mainURL];
-                successBlock_([cacheRecord data], nil);
+            } else {
+                //fetch via http
+                [NSURLConnection asyncRequest:request success:^(NSData *data, NSURLResponse *response) {
+                    CFAbsoluteTime endTime = CFAbsoluteTimeGetCurrent();
+                    NSLog(@"Cache Miss (%f):%@",(endTime - startTime),mainURL);
+                    successBlock_(data, response);
+                    
+                    KaptureCacheRequest *cacheEntity = [NSEntityDescription insertNewObjectForEntityForName:@"KaptureCacheRequest" inManagedObjectContext:context];
+                    [cacheEntity setValue:mainURL forKey:@"url"];
+                    [cacheEntity setValue:data forKey:@"data"];
+                    [cacheEntity setValue:[NSDate date] forKey:@"updatedAt"];
+                    
+                    [instanceData setValue:cacheEntity forKey:mainURL];
+                    
+                    NSError *error = nil;
+                    [context save:&error];
+                    if (error) {
+                        NSLog(@"%@", error);
+                    }
+                    
+                    [pendingURLS removeObject:mainURL];
+                    
+                    
+                } failure:^(NSData *data, NSError *error) {
+                }];
             }
+        } else {
+            //cache hit
+            CFAbsoluteTime endTime = CFAbsoluteTimeGetCurrent();
+            NSLog(@"Primary cache hit (%f):%@",(endTime - startTime),mainURL);
+            [pendingURLS removeObject:mainURL];
+            KaptureCacheRequest *cacheRecord = [instanceData objectForKey:mainURL];
+            successBlock_([cacheRecord data], nil);
         }
-    });
+});
 }
 
 

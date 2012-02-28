@@ -7,6 +7,7 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "KaptureCacheManager.h"
 
 @interface KaptureCacheTests : SenTestCase
 

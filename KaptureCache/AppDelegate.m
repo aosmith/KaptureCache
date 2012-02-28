@@ -19,12 +19,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     NSMutableSet *set = [[NSMutableSet alloc] init];
-    [set addObject:[NSString stringWithString:@"harrow"]];
-    if ([set containsObject:[NSString stringWithString:@"harrow1"]]) {
-        NSLog(@"YES");
-    } else {
-        NSLog(@"No");
-    }
+    
     KaptureCacheManager *cacheManager = [[KaptureCacheManager alloc] init];
     NSURL *testURL = [NSURL URLWithString:@"http://www.google.com"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:testURL];
@@ -37,6 +32,11 @@
         NSLog(@"success 2");
     } failure:^(NSData *data, NSError *error) {
     } forceReload:NO];
+    [cacheManager asyncRequest:request success:^(NSData *data, NSURLResponse *response) {
+        NSLog(@"success 3");
+    } failure:^(NSData *data, NSError *error) {
+        NSLog(@"success 4");
+    } forceReload:YES];
     return YES;
 }
 
