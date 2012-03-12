@@ -21,8 +21,8 @@
 		FA0262B214FC2A4200A65AFB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0262B114FC2A4200A65AFB /* CoreData.framework */; };
 		FA0262B914FC2AD500A65AFB /* KaptureCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0262B814FC2AD500A65AFB /* KaptureCacheManager.m */; };
 		FA0262CC14FC2BB200A65AFB /* NSURLConnection+block.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0262CB14FC2BB200A65AFB /* NSURLConnection+block.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FA0262DA14FC363900A65AFB /* KaptureCacheRequest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA0262D814FC363900A65AFB /* KaptureCacheRequest.xcdatamodeld */; };
-		FA0262E514FC644000A65AFB /* KaptureCacheRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0262E414FC644000A65AFB /* KaptureCacheRequest.m */; };
+		FAA046A9150E7A3C00457DB1 /* HTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA046A8150E7A3C00457DB1 /* HTTPResponse.m */; };
+		FAA046AF150E7D1800457DB1 /* KaptureCache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAA046AD150E7D1800457DB1 /* KaptureCache.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,9 +57,9 @@
 		FA0262B814FC2AD500A65AFB /* KaptureCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaptureCacheManager.m; sourceTree = "<group>"; };
 		FA0262CA14FC2BB200A65AFB /* NSURLConnection+block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+block.h"; sourceTree = "<group>"; };
 		FA0262CB14FC2BB200A65AFB /* NSURLConnection+block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+block.m"; sourceTree = "<group>"; };
-		FA0262D914FC363900A65AFB /* KaptureCacheRequest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KaptureCacheRequest.xcdatamodel; sourceTree = "<group>"; };
-		FA0262E314FC644000A65AFB /* KaptureCacheRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KaptureCacheRequest.h; sourceTree = SOURCE_ROOT; };
-		FA0262E414FC644000A65AFB /* KaptureCacheRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaptureCacheRequest.m; sourceTree = SOURCE_ROOT; };
+		FAA046A7150E7A3C00457DB1 /* HTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPResponse.h; sourceTree = "<group>"; };
+		FAA046A8150E7A3C00457DB1 /* HTTPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPResponse.m; sourceTree = "<group>"; };
+		FAA046AE150E7D1800457DB1 /* KaptureCache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KaptureCache.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,11 +172,11 @@
 		FA0262D714FC33B700A65AFB /* KaptureCache */ = {
 			isa = PBXGroup;
 			children = (
-				FA0262E314FC644000A65AFB /* KaptureCacheRequest.h */,
-				FA0262E414FC644000A65AFB /* KaptureCacheRequest.m */,
+				FAA046AD150E7D1800457DB1 /* KaptureCache.xcdatamodeld */,
+				FAA046A7150E7A3C00457DB1 /* HTTPResponse.h */,
+				FAA046A8150E7A3C00457DB1 /* HTTPResponse.m */,
 				FA0262B714FC2AD500A65AFB /* KaptureCacheManager.h */,
 				FA0262B814FC2AD500A65AFB /* KaptureCacheManager.m */,
-				FA0262D814FC363900A65AFB /* KaptureCacheRequest.xcdatamodeld */,
 			);
 			name = KaptureCache;
 			sourceTree = "<group>";
@@ -290,8 +290,8 @@
 				FA02629314FC2A1D00A65AFB /* AppDelegate.m in Sources */,
 				FA0262B914FC2AD500A65AFB /* KaptureCacheManager.m in Sources */,
 				FA0262CC14FC2BB200A65AFB /* NSURLConnection+block.m in Sources */,
-				FA0262DA14FC363900A65AFB /* KaptureCacheRequest.xcdatamodeld in Sources */,
-				FA0262E514FC644000A65AFB /* KaptureCacheRequest.m in Sources */,
+				FAA046A9150E7A3C00457DB1 /* HTTPResponse.m in Sources */,
+				FAA046AF150E7D1800457DB1 /* KaptureCache.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,13 +469,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		FA0262D814FC363900A65AFB /* KaptureCacheRequest.xcdatamodeld */ = {
+		FAA046AD150E7D1800457DB1 /* KaptureCache.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FA0262D914FC363900A65AFB /* KaptureCacheRequest.xcdatamodel */,
+				FAA046AE150E7D1800457DB1 /* KaptureCache.xcdatamodel */,
 			);
-			currentVersion = FA0262D914FC363900A65AFB /* KaptureCacheRequest.xcdatamodel */;
-			path = KaptureCacheRequest.xcdatamodeld;
+			currentVersion = FAA046AE150E7D1800457DB1 /* KaptureCache.xcdatamodel */;
+			path = KaptureCache.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
